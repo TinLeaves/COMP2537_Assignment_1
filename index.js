@@ -7,7 +7,7 @@ const MongoStore = require('connect-mongo');
 const bcrypt = require('bcrypt');
 const saltRounds = 12;
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3020;
 
 const app = express();
 
@@ -38,7 +38,7 @@ var mongoStore = MongoStore.create({
     crypto: {
         secret: mongodb_session_secret
     }
-})
+});
 
 app.use(session({
     secret: node_session_secret,
@@ -208,7 +208,7 @@ app.use(express.static(__dirname + "/public"));
 app.get("*", (req, res) => {
     res.status(404);
     res.send("Page not found - 404");
-})
+});
 
 app.listen(port, () => {
     console.log("Node application listening on port " + port);

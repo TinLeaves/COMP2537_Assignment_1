@@ -42,7 +42,7 @@ var mongoStore = MongoStore.create({
 
 app.use(session({
     secret: node_session_secret,
-    store: mongoStore, //default is memory store 
+    store: mongoStore, 
     saveUninitialized: false,
     resave: true
 }
@@ -70,7 +70,7 @@ app.get('/members', (req, res) => {
       return;
     }
   
-    const images = ['atEat.gif', 'atSad.gif', 'atVibe.gif'];
+    const images = ['atEat.gif', 'atSad.gif', 'atVibe.gif', 'atSoupMe.gif'];
     const randomIndex = Math.floor(Math.random() * images.length);
     const randomImage = '/public/' + images[randomIndex];
   

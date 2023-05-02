@@ -15,7 +15,7 @@ const Joi = require("joi");
 
 app.use('/public', express.static('public'));
 
-const expireTime = 60 * 60 * 1000; //expires after 1 hour  (hours * minutes * seconds * millis)
+const expireTime = 1 * 60 * 60 * 1000; //expires after 1 hour  (hours * minutes * seconds * millis)
 
 /* secret information section */
 const mongodb_host = process.env.MONGODB_HOST;
